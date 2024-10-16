@@ -1,4 +1,4 @@
-import React, { StrictMode, Suspense } from 'react'
+import React, { Children, StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import {
@@ -14,6 +14,9 @@ import './index.css'
 const Loading = React.lazy(()=> import("./Pages/Public/Loading/page.jsx"));
 const LandingPage = React.lazy(()=> import("./Pages/Public/LandingPage/page.jsx"))
 
+const BookList = React.lazy(()=> import("./Pages/Private/Booklist/Page.jsx"));
+const WishList = React.lazy(()=> import("./Pages/Private/Wishlist/Page.jsx"));
+
 const MainRouter = createBrowserRouter([
   {
     path: "/",
@@ -22,8 +25,23 @@ const MainRouter = createBrowserRouter([
         <LandingPage />
       </Suspense>
     ),
-    // errorElement: <ErrorPage />,
   },
+  {
+      path: "/",
+      element: <App />,
+      children: [
+        {
+          path: "litfind-booklist",  // The leading "/" is not needed here when using children
+          element: <BookList />,
+        },
+        {
+          path: "litfind-wishlist",
+          element: <WishList />,
+        },
+      ],
+      // errorElement: <ErrorPage />,  // Uncomment if you want to add an error page
+  },
+    // errorElement: <ErrorPage />,
 ])
 
 
