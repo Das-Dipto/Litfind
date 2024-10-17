@@ -31,11 +31,11 @@ const BooklistContainer = () => {
       {
         bookData.map((item, index)=>(
           <div className='border border-red-500 rounded-[15px] w-[250px]'>
-              {/* <p className='text-[black] font-semibold'>{item.title}</p>
+              <p className='text-[black] font-semibold'>{item.title}</p>
               <p className='text-[black] font-semibold'>{item.authors[0]?.name}</p>
               <figure className='w-[50px]'>
                  <img src={item.formats['image/jpeg']} alt="" />
-              </figure> */}
+              </figure>
           </div>
         ))
       }

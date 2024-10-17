@@ -1,0 +1,88 @@
+/* Main container */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Search Wrapper */
+  .search-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  /* Search bar styles */
+  .search-bar {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-bar:focus {
+    border-color: #6200ea;
+    box-shadow: 0 6px 12px rgba(98, 0, 234, 0.2);
+  }
+  
+  /* Search bar hover effect */
+  .search-bar:hover {
+    border-color: #bb86fc;
+    box-shadow: 0 5px 10px rgba(98, 0, 234, 0.1);
+  }
+  
+  /* Loading text */
+  .loading {
+    text-align: center;
+    color: #6200ea;
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  /* Error message */
+  .error {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  /* Book list */
+  .book-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Book items */
+  .book-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .book-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Animations */
+  .book-item {
+    animation: fadeInUp 0.4s ease forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
