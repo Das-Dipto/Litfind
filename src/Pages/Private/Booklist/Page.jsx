@@ -2,7 +2,9 @@ import React from 'react'
 
 const Page = () => {
   return (
-    <div>Page</div>
+    <div>
+      <input type="text" placeholder='Search by books' />
+    </div>
   )
 }
 
