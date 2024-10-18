@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import _ from 'lodash';
 import './customDesign.css' // Lodash for throttle and debounce
+import { env } from '../../../Configs/baseConfig';
+import Pagination from '../../../Components/Pagination/Pagination';
 
 const Page = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -14,7 +16,7 @@ const Page = () => {
     try {
       setLoading(true);
       setError('');
-      const response = await axios.get(`https://gutendex.com/books?search=${query}`);
+      const response = await axios.get(`${env.EXTERNAL_URL}/books?search=${query}`);
       console.log(response); // Log the entire response 
       if(response.data.count > 0){
         setBooks(response.data.results); // Store the book results in state
@@ -53,6 +55,7 @@ const Page = () => {
   };
 
   return (
+    <>
     <div className="container">
       <div className="search-wrapper">
         <input
@@ -75,6 +78,12 @@ const Page = () => {
         ))}
       </ul>
     </div>
+
+    <div className='mt-[4rem]'>
+        <Pagination/>
+    </div>
+    
+    </>
   );
 };
 
