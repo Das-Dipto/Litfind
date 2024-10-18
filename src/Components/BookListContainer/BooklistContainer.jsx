@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { hatch } from 'ldrs'
 import { env } from '../../Configs/baseConfig';
 
 const BooklistContainer = () => {
@@ -7,6 +8,7 @@ const BooklistContainer = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  hatch.register()
 
   const fetchBookData = async() =>{
       setLoading(true)
@@ -27,7 +29,15 @@ const BooklistContainer = () => {
   },[])
 
   return (
-    loading ? <div className='text-[black] font-semibold text-[20px]'>Loading...</div> : <div className='grid grid-cols-3 justify-center gap-11 w-[80%] border border-blue-500 mx-auto'>
+    loading ? <div className="loader h-[50vh] w-full flex justify-center items-center">
+          <l-hatch
+            size="28"
+            stroke="4"
+            speed="3.5" 
+            color="black" 
+          ></l-hatch>
+      </div> 
+: <div className='grid grid-cols-3 justify-center gap-11 w-[80%] border border-blue-500 mx-auto'>
       {
         bookData.map((item, index)=>(
           <div className='border border-red-500 rounded-[15px] w-[250px]'>

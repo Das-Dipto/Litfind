@@ -17,27 +17,30 @@ const LandingPage = React.lazy(()=> import("./Pages/Public/LandingPage/page.jsx"
 const BookList = React.lazy(()=> import("./Pages/Private/Booklist/Page.jsx"));
 const WishList = React.lazy(()=> import("./Pages/Private/Wishlist/Page.jsx"));
 
+const SingleBookInformation = React.lazy(()=> import("./Pages/Private/BookInformation/Page.jsx"));
+
 const MainRouter = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <Suspense fallback={<Loading />}>
-        <LandingPage />
-      </Suspense>
-    ),
+    element: <LandingPage />
+    
   },
   {
       path: "/",
       element: <App />,
       children: [
         {
-          path: "litfind-booklist",  // The leading "/" is not needed here when using children
+          path: "/litfind-booklist",  // The leading "/" is not needed here when using children
           element: <BookList />,
         },
         {
-          path: "litfind-wishlist",
+          path: "/litfind-wishlist",
           element: <WishList />,
         },
+        {
+          path:"/book-information/:id",
+          element:<SingleBookInformation/>
+        }
       ],
       // errorElement: <ErrorPage />,  // Uncomment if you want to add an error page
   },

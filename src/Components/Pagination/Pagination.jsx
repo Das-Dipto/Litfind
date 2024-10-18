@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { env } from '../../Configs/baseConfig';
+import { hatch } from 'ldrs'
 import './customDesign.css'; // for adding styles and transitions
+import { useNavigate } from 'react-router-dom';
 
 const Pagination = () => {
+  const navigate = useNavigate();
   const [books, setBooks] = useState([]);
   const [nextPage, setNextPage] = useState(null);
   const [prevPage, setPrevPage] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
+
+  hatch.register()
+
+// Default values shown
+
 
   useEffect(() => {
     fetchBooks(currentPage);
@@ -40,13 +48,21 @@ const Pagination = () => {
     <div className="books-container">
       {/* Show Loader while loading */}
       {loading ? (
-        <div className="loader">Loading...</div>
+        <div className="loader h-[50vh] w-full flex justify-center items-center">
+                <l-hatch
+                  size="28"
+                  stroke="4"
+                  speed="3.5" 
+                  color="black" 
+                ></l-hatch>
+        </div>
       ) : (
         <div className='w-[90%] mx-auto'>
           <div className="grid grid-cols-2 gap-[1rem]">
           {books.map((book) => (
       <div
         key={book.id}
+        onClick={() => navigate(`books-information/${book.id}`)}
         className="p-5 book-card flex gap-10 transition-transform duration-500 hover:scale-105 bg-white hover:bg-blue-50 rounded-lg"
       >
         <figure className='w-[200px] h-[220px]'>
