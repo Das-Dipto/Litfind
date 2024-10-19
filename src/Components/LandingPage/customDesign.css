@@ -1,0 +1,17 @@
+.hamburger-icon{
+    display: none;
+}
+
+.navbar-menu > p{
+    display: block;
+}
+
+@media screen and (max-width:768px) {
+    .hamburger-icon{
+        display: inline-block;
+    }
+
+    .navbar-menu > p{
+        display: none;
+    }
+}
