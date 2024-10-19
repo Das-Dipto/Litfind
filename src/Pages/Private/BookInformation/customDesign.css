@@ -1,0 +1,55 @@
+/* Basic styles for the book page */
+.book-page {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .book-card-detail {
+    display: flex;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  .book-card-detail:hover {
+    background-color: #f9fafb;
+    transform: translateY(-5px);
+  }
+  
+  .book-card-detail img {
+    border-radius: 10px;
+  }
+  
+  .book-info h2 {
+    color: #2d3748;
+  }
+  
+  .book-info p {
+    color: #4a5568;
+  }
+  
+  /* Loading spinner */
+  .loading-spinner {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 18px;
+    color: #4a5568;
+  }
+  
+  /* Error message */
+  .error-message {
+    text-align: center;
+    margin-top: 50px;
+    color: #e53e3e;
+    font-size: 18px;
+  }
+  
+  /* Download button */
+  .download-btn {
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .download-btn:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  

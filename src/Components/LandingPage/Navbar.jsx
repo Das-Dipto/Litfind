@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <>
         <nav className='flex items-center justify-between py-5 px-[25px] bg-[#3a3636] w-full'>
-            <h5 onClick={()=> navigate('/')} className='text-[#90f57c] font-bold text-[28px] cursor-pointer'>
+            <h5 onClick={()=> navigate('/home')} className='text-[#90f57c] font-bold text-[28px] cursor-pointer'>
                 LitFind
             </h5>
 

@@ -22,8 +22,11 @@ const SingleBookInformation = React.lazy(()=> import("./Pages/Private/BookInform
 const MainRouter = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage />
-    
+    element: <LandingPage />,
+  },
+  {
+    path:"/home",
+    element:<LandingPage/>
   },
   {
       path: "/",
