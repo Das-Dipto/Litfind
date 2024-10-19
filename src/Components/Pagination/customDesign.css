@@ -10,40 +10,55 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
   }
   
-  .pagination-button {
-    background-color: #f0f0f0;
-    border: none;
-    padding: 10px 15px;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border-radius: 5px;
+  .pagination-container {
+    display: flex;
+    justify-content: center; /* Align to the start */
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping */
   }
   
-  .pagination-button.active {
+  .pagination-button, .pagination-dropdown {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
     background-color: #007bff;
     color: white;
-  }
-  
-  .pagination-button:hover:not(.active) {
-    background-color: #e0e0e0;
+    cursor: pointer;
+    border-radius: 4px;
   }
   
   .pagination-button.disabled {
+    background-color: #ccc;
     cursor: not-allowed;
-    opacity: 0.5;
+  }
+  
+  .pagination-button.active {
+    background-color: #0056b3;
   }
   
   .pagination-dropdown {
     padding: 8px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 4px;
   }
   
-  .pagination-dropdown:hover {
-    background-color: #f0f0f0;
+  /* Horizontal Scrollbar Styling (Optional) */
+  .pagination-container::-webkit-scrollbar {
+    height: 8px; /* Scrollbar height */
   }
   
+  .pagination-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar color */
+    border-radius: 4px;
+  }
+  
+  .pagination-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+  @media screen and (max-widht:500px) {
+    .pagination-container {
+      justify-content: flex-start;
+    }
+  }

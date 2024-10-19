@@ -17,7 +17,7 @@ const Navbar = () => {
                 LitFind
             </h5>
 
-            <div className='navbar-menu flex justify-end items-center gap-10 w-auto md:w-[400px] border border-red-500'>
+            <div className='navbar-menu flex justify-end items-center gap-10 w-auto md:w-[400px]'>
                 <p onClick={()=> navigate('/litfind-booklist')} className='text-[#90f57c] font-semibold text-[18px] hover:text-[#ffa500] ease-in-out duration-200 cursor-pointer'>Booklist</p>
                 <p onClick={()=> navigate('/litfind-wishlist')} className='text-[#90f57c] font-semibold text-[18px] hover:text-[#ffa500] ease-in-out duration-200 cursor-pointer'>Wishlist</p>
                 <figure className='w-[35px] border border-[#90f57c] rounded-[50%]'>
