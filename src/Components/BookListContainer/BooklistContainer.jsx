@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { hatch } from 'ldrs'
 import { env } from '../../Configs/baseConfig';
+import './customDesign.css'
 
 const BooklistContainer = () => {
   const [bookData, setBookData] = useState([]);
@@ -37,16 +38,24 @@ const BooklistContainer = () => {
             color="black" 
           ></l-hatch>
       </div> 
-: <div className='grid grid-cols-3 justify-center gap-11 w-[80%] border border-blue-500 mx-auto'>
+: <div className='grid grid-cols-3 justify-center gap-11 w-[88%] mx-auto my-[4rem]'>
       {
-        bookData.map((item, index)=>(
-          <div className='border border-red-500 rounded-[15px] w-[250px]'>
-              <p className='text-[black] font-semibold'>{item.title}</p>
-              <p className='text-[black] font-semibold'>{item.authors[0]?.name}</p>
-              <figure className='w-[50px]'>
-                 <img src={item.formats['image/jpeg']} alt="" />
-              </figure>
+        bookData.map((book, index)=>(
+          <div
+          key={book.id}
+          onClick={() => navigate(`/book-information/${book.id}`)}
+          className="p-5 book-card flex gap-10 transition-transform duration-500 hover:scale-105 bg-white hover:bg-blue-50 rounded-lg"
+        >
+          <figure className='w-[120px] '>
+            <img src={book.formats['image/jpeg']} alt={book.title} className="book-cover w-full h-full object-cover" />
+          </figure>
+          <div>
+            <h3 className="book-title font-bold text-[18px]">{book.title.length > 40 ? <span title={book.title}>{book.title.slice(0, 40) + '...'}</span>  : book.title}</h3>
+            <p className="book-author text-blue-500 mt-3">Author: {book.authors.map(author => author.name).join(", ")}</p>
+            <p className="book-genre">Genre: {book.subjects[0] || 'N/A'}</p>
+            <p className="book-id text-blue-800 font-semibold">ID: {book.id}</p>
           </div>
+        </div>
         ))
       }
     </div>

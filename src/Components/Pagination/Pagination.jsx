@@ -62,7 +62,7 @@ const Pagination = () => {
           {books.map((book) => (
       <div
         key={book.id}
-        onClick={() => navigate(`books-information/${book.id}`)}
+        onClick={() => navigate(`/book-information/${book.id}`)}
         className="p-5 book-card flex gap-10 transition-transform duration-500 hover:scale-105 bg-white hover:bg-blue-50 rounded-lg"
       >
         <figure className='w-[200px] h-[220px]'>
