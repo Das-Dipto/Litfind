@@ -10,8 +10,19 @@
     justify-content: space-between;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly lower */
+    animation: reveal 1s forwards; /* Apply animation */
+    animation-delay: 0.2s; /* Delay to allow for staggered effect */
   }
-  
+
+  @keyframes reveal {
+    to {
+      opacity: 1; /* Fully visible */
+      transform: translateY(0); /* Original position */
+    }
+  }
   .wishlist-card:hover {
     background-color: #f0f4f8;
     transform: translateY(-5px);

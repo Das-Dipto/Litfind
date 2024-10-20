@@ -10,9 +10,12 @@ import {
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from './Utils/ThemeContext/ThemeContext.jsx';
 import './index.css'
+import LandingPage from './Pages/Public/LandingPage/page.jsx'
+import ErrorPage from './Pages/Public/ErrorPage/Page.jsx';
 
 const Loading = React.lazy(()=> import("./Pages/Public/Loading/page.jsx"));
-const LandingPage = React.lazy(()=> import("./Pages/Public/LandingPage/page.jsx"))
+// const LandingPage = React.lazy(()=> import("./Pages/Public/LandingPage/page.jsx"))
+// const LandingPage = import("./Pages/Public/LandingPage/page.jsx")
 
 const BookList = React.lazy(()=> import("./Pages/Private/Booklist/Page.jsx"));
 const WishList = React.lazy(()=> import("./Pages/Private/Wishlist/Page.jsx"));
@@ -45,7 +48,11 @@ const MainRouter = createBrowserRouter([
           element:<SingleBookInformation/>
         }
       ],
-      // errorElement: <ErrorPage />,  // Uncomment if you want to add an error page
+   // Uncomment if you want to add an error page
+  },
+  {
+    path: "*", // Catch-all route for handling unknown routes
+    element: <ErrorPage />,
   },
     // errorElement: <ErrorPage />,
 ])

@@ -1,0 +1,37 @@
+/* ErrorPage.css */
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text color */
+    text-align: center;
+  }
+  
+  .error-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .error-message {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .error-link {
+    padding: 0.5rem 1rem;
+    background-color: #721c24; /* Dark red button */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .error-link:hover {
+    background-color: #f8d7da; /* Light red on hover */
+    color: #721c24; /* Dark red text on hover */
+  }
+  

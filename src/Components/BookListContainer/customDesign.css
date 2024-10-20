@@ -3,7 +3,20 @@
     border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly lower */
+    animation: reveal 1s forwards; /* Apply animation */
+    animation-delay: 0.2s; /* Delay to allow for staggered effect */
   }
+
+  @keyframes reveal {
+    to {
+      opacity: 1; /* Fully visible */
+      transform: translateY(0); /* Original position */
+    }
+  }
+  
   
   .book-card:hover {
     background-color: #e0f7fa;

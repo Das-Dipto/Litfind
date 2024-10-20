@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { hatch } from 'ldrs'
 import { jsPDF } from 'jspdf';
 import './customDesign.css';
 import bookCoverImage from '../../../assets/Navbar/demobook.png'  // Custom styles
@@ -9,6 +10,8 @@ const Page = () => {
   const { id } = useParams();
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  hatch.register()
 
   useEffect(() => {
     // Fetch the book data from the Gutendex API
@@ -45,7 +48,14 @@ const Page = () => {
   };
 
   if (loading) {
-    return <div className="loading-spinner min-h-[80vh]">Loading...</div>;  // Custom spinner style
+    return <div className="loader h-[50vh] w-full flex justify-center items-center">
+    <l-hatch
+      size="28"
+      stroke="4"
+      speed="3.5" 
+      color="black" 
+    ></l-hatch>
+</div> ;  // Custom spinner style
   }
 
   if (!book) {

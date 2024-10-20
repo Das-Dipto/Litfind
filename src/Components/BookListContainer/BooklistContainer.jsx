@@ -4,8 +4,10 @@ import { hatch } from 'ldrs'
 import { env } from '../../Configs/baseConfig';
 import './customDesign.css'
 import bookCoverImage from '../../assets/Navbar/demobook.png'
+import { useNavigate } from 'react-router-dom';
 
 const BooklistContainer = () => {
+  const navigate = useNavigate();
   const [bookData, setBookData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -45,7 +47,7 @@ const BooklistContainer = () => {
           <div
           key={book.id}
           onClick={() => navigate(`/book-information/${book.id}`)}
-          className="p-5 book-card flex gap-10 transition-transform duration-500 hover:scale-105 bg-white hover:bg-blue-50 rounded-lg"
+          className="p-5 book-card cursor-pointer flex gap-10 transition-transform duration-500 hover:scale-105 bg-white hover:bg-blue-50 rounded-lg"
         >
           <figure className='w-[120px] '>
             <img src={book.formats['image/jpeg'] ? book.formats['image/jpeg'] : bookCoverImage} alt={book.title} className="book-cover w-full h-full object-cover" />
