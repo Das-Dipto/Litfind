@@ -6,13 +6,13 @@ import Footer from './Components/Footer/Footer'
 
 const App = () => {
   return (
-    <>
+    <div className='relative min-h-[100vh]'>
       <Navbar/>
       <Suspense fallback={<Loading/>}>
           <Outlet/>
       </Suspense>
       <Footer/>
-    </>
+    </div>
   )
 }
 
