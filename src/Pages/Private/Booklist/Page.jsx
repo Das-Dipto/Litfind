@@ -4,8 +4,12 @@ import _ from 'lodash';
 import './customDesign.css' // Lodash for throttle and debounce
 import { env } from '../../../Configs/baseConfig';
 import Pagination from '../../../Components/Pagination/Pagination';
+import bookCoverImage from '../../../assets/Navbar/demobook.png'
+import { useNavigate } from 'react-router-dom';
 
 const Page = () => {
+
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -72,7 +76,8 @@ const Page = () => {
 
       <ul className="book-list">
         {books.map((book) => (
-          <li key={book.id} className="book-item">
+          <li onClick={()=> navigate(`/book-information/${book.id}`)} key={book.id} className="book-item flex items-center gap-3 hover:bg-slate-400">
+            <img className='w-[30px]' src={book.formats['image/jpeg'] ? book.formats['image/jpeg'] : bookCoverImage} alt="" />
             <strong>{book.title}</strong> by {book.authors.map((author) => author.name).join(', ')}
           </li>
         ))}

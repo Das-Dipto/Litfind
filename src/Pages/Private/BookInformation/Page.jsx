@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { jsPDF } from 'jspdf';
-import './customDesign.css';  // Custom styles
+import './customDesign.css';
+import bookCoverImage from '../../../assets/Navbar/demobook.png'  // Custom styles
 
 const Page = () => {
   const { id } = useParams();
@@ -53,14 +54,15 @@ const Page = () => {
 
   return (
     <div className="book-page p-5">
-      <div className="book-card-detail flex flex-col md:flex-row bg-white rounded-lg shadow-lg p-5 gap-5 relative">
+      <div className="book-card-detail flex flex-col md:flex-row bg-white rounded-lg shadow-lg p-5 gap-10 relative">
         <figure className="w-full md:w-[250px] h-[300px]">
-          <img src={book.formats['image/jpeg']} alt={book.title} className="w-full h-full object-cover rounded-md" />
+          <img src={book.formats['image/jpeg'] ? book.formats['image/jpeg'] : bookCoverImage } alt={book.title} className="w-full h-full object-cover rounded-md" />
         </figure>
         <div className="book-info flex-1">
           <h2 className="font-bold text-2xl mb-4">{book.title}</h2>
           <p className="text-lg text-blue-500 mb-2">Author: {book.authors.map(author => author.name).join(', ')}</p>
           <p className="text-gray-700 mb-4">Genre: {book.subjects[0] || 'N/A'}</p>
+          <p className="text-gray-700 mb-4 font-semibold">Download: {book.download_count || 'N/A'}</p>
           {/* <p className="text-gray-500 text-sm mb-6">Published by: {book.publishers[0] || 'Unknown'}</p> */}
 
           <button

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './customDesign.css';
 import { toast } from 'react-toastify';
+import bookCoverImage from '../../../assets/Navbar/demobook.png'
 
 const Page = () => {
   const [wishlist, setWishlist] = useState([]);
@@ -30,7 +31,7 @@ const Page = () => {
               className="wishlist-card p-5 bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 relative"
             >
               <figure className="h-[220px]">
-                <img src={book.cover} alt={book.title} className="w-full h-full object-cover rounded-md" />
+                <img src={book.cover ? book.cover : bookCoverImage} alt={book.title} className="w-full h-full object-cover rounded-md" />
               </figure>
               <div className="p-3">
                 <h3 className="font-bold text-[18px] mb-2">{book.title}</h3>

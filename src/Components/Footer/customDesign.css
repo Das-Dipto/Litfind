@@ -1,0 +1,50 @@
+.footer {
+    background-color: #151618; /* Dark background for contrast */
+    color: #ffffff; /* White text color */
+    padding: 1rem 0rem;
+    text-align: center; /* Centered text */
+    transition: background-color 0.3s ease; /* Transition for background color */
+  }
+  
+  .footer:hover {
+    background-color: #080808; /* Darker background on hover */
+  }
+  
+  .footer-content {
+    max-width: 90%; /* Maximum width for content */
+    margin: 0 auto; /* Center the content */
+  }
+  
+  .footer-title {
+    font-size: 1.6rem; /* Larger font size for title */
+    animation: fadeIn 1s ease; /* Fade in animation */
+  }
+  
+  .footer-quote {
+    font-size: 1.2rem; /* Font size for quotes */
+    margin: 0.5rem 0; /* Vertical spacing */
+    opacity: 0.9; /* Slight transparency */
+    transition: opacity 0.3s ease; /* Transition for opacity */
+  }
+  
+  .footer-quote:hover {
+    opacity: 1; /* Full opacity on hover */
+  }
+  
+  .footer-rights {
+    margin-top: 1rem; /* Spacing above copyright text */
+    font-size: 0.9rem; /* Smaller font size */
+  }
+  
+  /* Animation keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+  

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { hatch } from 'ldrs'
 import { env } from '../../Configs/baseConfig';
 import './customDesign.css'
+import bookCoverImage from '../../assets/Navbar/demobook.png'
 
 const BooklistContainer = () => {
   const [bookData, setBookData] = useState([]);
@@ -47,7 +48,7 @@ const BooklistContainer = () => {
           className="p-5 book-card flex gap-10 transition-transform duration-500 hover:scale-105 bg-white hover:bg-blue-50 rounded-lg"
         >
           <figure className='w-[120px] '>
-            <img src={book.formats['image/jpeg']} alt={book.title} className="book-cover w-full h-full object-cover" />
+            <img src={book.formats['image/jpeg'] ? book.formats['image/jpeg'] : bookCoverImage} alt={book.title} className="book-cover w-full h-full object-cover" />
           </figure>
           <div>
             <h3 className="book-title font-bold text-[18px]">{book.title.length > 40 ? <span title={book.title}>{book.title.slice(0, 40) + '...'}</span>  : book.title}</h3>
