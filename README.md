@@ -2,6 +2,8 @@
 
 **LitFind** is a user-friendly web application designed for book lovers to discover, save, and explore a vast collection of literary works from the public domain. By leveraging the Gutendex API, LitFind offers an intuitive interface where users can search for books by title, filter by genre, and maintain a wishlist for their favorite reads.
 
+You can check out the live version of the application [here](https://litfind-d8s.netlify.app/).
+
 ## Features
 
 - **Search Functionality**: Real-time search bar to filter books by title.
