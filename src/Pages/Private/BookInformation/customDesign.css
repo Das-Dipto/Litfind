@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    
+
     opacity: 0; /* Start hidden */
     transform: translateY(20px); /* Start slightly lower */
     animation: reveal 1s forwards; /* Apply animation */
@@ -21,6 +21,7 @@
       transform: translateY(0); /* Original position */
     }
   }
+  
   .book-card-detail:hover {
     background-color: #f9fafb;
     transform: translateY(-5px);

@@ -136,7 +136,7 @@ const Pagination = () => {
               <div
                 key={book.id}
                 onClick={() => navigate(`/book-information/${book.id}`)}
-                className="p-5 book-card flex gap-10 transition-transform duration-500 hover:scale-105 bg-white hover:bg-blue-50 rounded-lg relative"
+                className="p-5 book-card cursor-pointer flex gap-10 transition-transform duration-500 hover:scale-105 bg-white hover:bg-blue-50 rounded-lg relative"
               >
                 <figure className='w-[200px] h-[220px]'>
                   <img src={book.formats['image/jpeg'] ? book.formats['image/jpeg'] : bookCoverImage} alt={book.title} className="book-cover w-full h-full object-cover" />
